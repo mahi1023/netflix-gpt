@@ -18,6 +18,17 @@
 - BugFix: if the user is not logged in redirect/ browse to login pace - vice versa
 - Unsubscribe to th eonAuthStateChange callback
 - Add hardcoded values to constants file
+- Register TMDB API & create an app & get access token
+- Get data from TMDB now playing movies list API
+- Custom Hook for Now Playing Movies
+- Update store with movies data
+- Created a movie slice
+- Planning for MainCOntainer and SceondaryContainer
+- Fetach Data for Trailer Video.
+- Update store with video data
+- Embedded the Youtube video and make it autoplay and mute
+- Tailwind class to make main container look good
+
 
 
 # Features
