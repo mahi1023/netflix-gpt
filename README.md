@@ -14,6 +14,10 @@
 - Created redux store to store user details
 - Update Profile
 - Implemented Sign Out
+- BugFix: Sign up user display name and profile pic
+- BugFix: if the user is not logged in redirect/ browse to login pace - vice versa
+- Unsubscribe to th eonAuthStateChange callback
+- Add hardcoded values to constants file
 
 
 # Features

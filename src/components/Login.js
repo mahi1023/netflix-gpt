@@ -6,22 +6,23 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import {USER_AVATAR,BACKGROUND_IMG} from '../utils/constants'
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const email = useRef(null);
   const password = useRef(null);
   const userName = useRef(null);
+
+  //on Sign In/ Sign Up Click
   const handleBtnClick = (event) => {
     event.preventDefault();
-    //validate the form data //Sign /Sign up
+    //validate the form data //Sign In /Sign up
     let message;
     if (isSignInForm) {
       message = checkValidData(
@@ -42,7 +43,7 @@ const Login = () => {
     }
     if (message) return;
 
-    // sign in /sign up auth
+    // sign in /sign up auth(using firebase)
     if (!isSignInForm) {
       //sing up logic
       createUserWithEmailAndPassword(
@@ -51,12 +52,13 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed in
+          // Signed up is sucess
           const user = userCredential.user;
           console.log(user);
+          //here updating the display name and photo in fribase
           updateProfile(user, {
             displayName: userName.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/89977699?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -69,7 +71,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -77,10 +78,10 @@ const Login = () => {
             });
         })
         .catch((error) => {
+           // An error occurred in sign up
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + " - " + errorMessage);
-          // ..
         });
     } else {
       //sign in logic
@@ -90,19 +91,17 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed in
+          // Signed in success
           const user = userCredential.user;
           console.log(user);
-
-          // ...
         })
         .catch((error) => {
+           // An error occurred in Sign in
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorCode + " - " + errorMessage);
           setErrorMessage("User Not Found");
         });
-      navigate("/browse");
     }
   };
 
@@ -115,7 +114,7 @@ const Login = () => {
       <div className="absolute">
         <img
           className=" "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BACKGROUND_IMG}
           alt="logo"
         />
       </div>
