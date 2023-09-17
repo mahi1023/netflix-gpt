@@ -28,7 +28,12 @@
 - Update store with video data
 - Embedded the Youtube video and make it autoplay and mute
 - Tailwind class to make main container look good
-
+- Building secondary component
+- Build Movie List by using custom Hooks
+- Build Movie Card
+- TMDB Image cdn URL
+- Made the Browser Ui look good using Tailwind Css
+- usePopular custom hook to get popular movies
 
 
 # Features
@@ -39,9 +44,9 @@
 - Browse Page(after authentication)
     - Header
     - Main Movie
-        - Tailer in Background
+        - Tailer in Background(MainContainer)
         - Title and Descripion
-        - Movie Suggestions
+        - Movie Suggestions(SecondaryContainer)
             - Movie List * n
 
 - NetflixGPT
