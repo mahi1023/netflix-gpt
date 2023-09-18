@@ -38,7 +38,9 @@
 - GPT Search Page 
 - GPT Search Bar
 - Added i18N(Multi Language) to the Pages
-
+- Used Open AI calls 
+- stored the top 5 movies search and make the result of list in TMDB api
+- used Env
 
 # Features
 - Login/Sign Up
