@@ -6,8 +6,7 @@ const SecondaryContainer = () => {
   const movies = useSelector(store=>store.movieList);
  
  
-  console.log("second");
-  console.log(movies);
+  // console.log(movies);
   return (
     (movies.nowPlayMovies && movies.popularMovies && movies.topRatedMovies && movies.upcomingMovies) && (
     <div className=' bg-black'>

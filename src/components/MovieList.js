@@ -1,8 +1,8 @@
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  console.log(title);
-  console.log(movies);
+//   console.log(title);
+//   console.log(movies);
   return (
     <div className="px-6">
         {/*Here we have used overflow-x-scroll to scroll all the images */}
