@@ -1,14 +1,19 @@
 import { addTrailerVideo } from "../utils/moviesSlice";
 import React, { useEffect, useState } from "react";
 import { API_Options } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const useTrailerVideo = (movieId) => {
   const dispatch = useDispatch();
 
+  // checking wheterg the trailer is there in stor or not
+  const nowPlayingMovies = useSelector(
+    (store) => store.movieList?.trailerVideo
+  );
+
   //fetch trailer video from movie api from tmbd
   useEffect(() => {
-    getMovieVideos();
+    !nowPlayingMovies && getMovieVideos();
   }, []);
 
   const getMovieVideos = async () => {
