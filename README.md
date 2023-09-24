@@ -38,9 +38,16 @@
 - GPT Search Page 
 - GPT Search Bar
 - Added i18N(Multi Language) to the Pages
-- Used Open AI calls 
+- GPT  Open AI APi key  
+- GPT Search API call
+- fetched GPT Movie Suggestions
 - stored the top 5 movies search and make the result of list in TMDB api
-- used Env
+- Created gptSLice and added data over there
+- Reused MoveList component to display Search Movie Suggestion List
+- Added .env
+- Adding .env to gitignore
+- Memoization
+- Made the app resposinve
 
 # Features
 - Login/Sign Up

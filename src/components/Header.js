@@ -76,8 +76,9 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-44" src={LOGO_URL} alt="logo" />
+    <div className="w-full absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex 
+    flex-col md:flex-row justify-between ">
+      <img className="w-44 mx-auto md:mx-0 " src={LOGO_URL} alt="logo" />
       {/* if user data is avaible in store then only display sing out */}
       {store && (
         <div className="flex p-2 items-center justify-around">
@@ -106,7 +107,7 @@ const Header = () => {
           >
             {showGptSearch ? "Home" : "GPT Search"}
           </button>
-          <img className="w-12 h-12 " src={store.photoURL} alt="userIcon" />
+          <img className=" hidden md:block w-12 h-12 " src={store.photoURL} alt="userIcon" />
           <button
             className=" text-white text-lg font-bold px-2"
             onClick={handleSignOut}

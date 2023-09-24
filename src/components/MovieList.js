@@ -6,7 +6,7 @@ const MovieList = ({ title, movies }) => {
   return (
     <div className="px-6">
         {/*Here we have used overflow-x-scroll to scroll all the images */}
-        <h2 className=" text-3xl py-4 text-white">{title}</h2>
+        <h2 className=" text-lg md:text-3xl py-4 text-white">{title}</h2>
       <div className="flex overflow-x-scroll">
         <div className="flex">
           {movies.map((obj) => {
